@@ -8,6 +8,12 @@ use App\Student;
 
 class CourseController extends Controller
 {
+
+	public function __construct(){
+        
+        $this->middleware('auth')->except(['index', 'show']);
+    
+    }
     
     public function index(){
 
@@ -38,7 +44,7 @@ class CourseController extends Controller
 
 		$course->save();
 
-		return view('course.index');
+		return view('home');
 	}
 
 	public function edit($id){
@@ -72,7 +78,7 @@ class CourseController extends Controller
 
 		$course->save();
 
-		return view('course.index');
+		return view('home');
 
 	}
 
@@ -85,7 +91,7 @@ class CourseController extends Controller
 
 		$course->delete();
 
-		return view('course.index');
+		return view('home');
 	}
 
 }

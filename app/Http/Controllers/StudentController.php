@@ -9,6 +9,13 @@ use App\Course;
 
 class StudentController extends Controller
 {
+
+	public function __construct(){
+        
+        $this->middleware('auth')->except(['index', 'show']);
+    
+    }
+
     public function index(){
 
 		return view('student.index');
@@ -76,7 +83,7 @@ class StudentController extends Controller
             
         }
 
-		return view('student.index');
+		return view('home');
 	}
 
 	public function show($id){
@@ -143,7 +150,7 @@ class StudentController extends Controller
             $student->courses()->sync($courses);;
         }
 
-		return view('student.index');
+		return view('home');
 
 	}
 
@@ -157,7 +164,7 @@ class StudentController extends Controller
 
 		$user->delete();
 
-		return view('student.index');
+		return view('home');
 	}
 
 }
