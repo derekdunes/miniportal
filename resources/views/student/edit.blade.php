@@ -1,65 +1,64 @@
-
-@extends('layouts.app')
+@extends('layouts.blackApp')
 
 @section('content')
 
 <div class="container">
-    <form class="card" role="form" method="POST" action="{{ route('student.update', $student->id) }}" enctype="multipart/form-data">
+    <form class="" role="form" method="POST" action="{{ route('student.update', $student->id) }}" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
         
         {{ csrf_field() }}
 
          <div class="row">
             <div class="col-md-12">
-                <div class="card-header">
-                <h3 class="card-title">Editing Student : {{ $student->first_name }} {{ $student->last_name }}</h3>
+                <div class="">
+                <h3 class="">Editing Student : {{ $student->first_name }} {{ $student->last_name }}</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="">
                             <div class="row">
 
-                                <div class="col-sm-6 col-md-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                       <label class="form-label">Profile Image</label>
                                       <input  id="image" type="file" name="image" class="form-control" placeholder="Profile Image"  accept="image/*" >
                                     </div>
                               </div>
 
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="form-label">First Name</label>
                                       <input id="name" name="first_name" class="form-control" placeholder="First Name" value="{{ $student->first_name }}" type="text" autofocus>
                                       </div>
                                   </div>
 
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="form-label">Last Name</label>
                                       <input id="name" name="last_name" class="form-control" placeholder="Last Name" value="{{ $student->last_name }}" type="text" autofocus>
                                       </div>
                                   </div>
 
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="form-label">Email address</label>
                                         <input  id="release_date" name="email" class="form-control" placeholder="johndoe@example.com" value="{{ $student->email }}" type="email">
                                       </div>
                                   </div>
 
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="form-label">Date of Birth</label>
                                         <input  id="release_date" name="birth_day" class="form-control" placeholder="Date of birth" value="{{ \Carbon\Carbon::parse($student->birth_day)->format('Y-m-d') }}" type="date">
                                       </div>
                                   </div>
 
-                                  <div class="col-sm-6 col-md-6">
+                                  <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="form-label">Registration Number</label>
                                       <input id="name" name="reg_no" class="form-control" placeholder="Esut/2020/123456" value="{{ $student->reg_no }}" type="text" autofocus>
                                       </div>
                                   </div>
 
-                                  <div class="col-sm-6 col-md-4">
+                                  <div class="col-md-4">
                                       <div class="form-group">
                                         <label class="form-label">Level</label>
                                         <select id="level" name="level" class="form-control custom-select">
@@ -77,7 +76,7 @@
                                 </div>
 
 
-                            <div class="col-sm-6 col-md-4"> 
+                            <div class="col-md-4"> 
                               <div class="form-group">
                                 <label for="name" class="form-label">Select the Courses</label><br>
 

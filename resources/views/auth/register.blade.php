@@ -1,13 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.blackApp')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div>
 
-                <div class="card-body">
+                <h1 class="cover-heading"><div>{{ __('Register') }}</div></h1>
+                
+                <div >
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -63,7 +64,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-lg btn-dark">
                                     {{ __('Register') }}
                                 </button>
                             </div>
